@@ -809,7 +809,7 @@ scene7.append("g")
 
 
 async function load1() {
-    d3.csv("https://csarkar1983.github.io/testrepo/data/US_TORNADO_2021.csv").then(function (data_given) {
+    d3.csv("https://bdata-arindam.github.io/TornadoInsurance/data/US_TORNADO_2021.csv").then(function (data_given) {
 
 
         //console.log(data_given[3])
@@ -1099,7 +1099,7 @@ var noHighlight = function (d) {
 }
 
 async function load2() {
-    d3.csv("https://csarkar1983.github.io/testrepo/data/US_TORNADO_2021.csv").then(function (d) {
+    d3.csv("https://bdata-arindam.github.io/TornadoInsurance/data/US_TORNADO_2021.csv").then(function (d) {
         scene2.selectAll("div")
             .append("g")
             .data(d)
@@ -1160,7 +1160,7 @@ function updateClimateIndex(event) {
     //alert(value);
     if (value === "2019") {
         scene2.selectAll('circle').remove();
-        d3.csv("https://csarkar1983.github.io/testrepo/data/US_TORNADO_2021.csv").then(function (d) {
+        d3.csv("https://bdata-arindam.github.io/TornadoInsurance/data/US_TORNADO_2021.csv").then(function (d) {
             //alert(value);
             scene2.selectAll("p")
                 .append("g")
@@ -1189,7 +1189,7 @@ function updateClimateIndex(event) {
         })
     } else if (value === "2020") {
         scene2.selectAll('circle').remove();
-        d3.csv("https://csarkar1983.github.io/testrepo/data/US_TORNADO_2021.csv").then(function (d) {
+        d3.csv("https://bdata-arindam.github.io/TornadoInsurance/data/US_TORNADO_2021.csv").then(function (d) {
             //alert(value);
             scene2.selectAll("p")
                 .append("g")
@@ -1218,7 +1218,7 @@ function updateClimateIndex(event) {
         })
     } else {
         scene2.selectAll('circle').remove();
-        d3.csv("https://csarkar1983.github.io/testrepo/data/US_TORNADO_2021.csv").then(function (d) {
+        d3.csv("https://bdata-arindam.github.io/TornadoInsurance/data/US_TORNADO_2021.csv").then(function (d) {
             scene2.selectAll("p")
                 .append("g")
                 .data(d)
