@@ -1,10 +1,10 @@
-// --------------------------------------------------------------------------------// 
+// --------------------------------------------------------------------------------//
 // D3 Code for CS 416 Final Project - By Chanchal Sarkar
-// --------------------------------------------------------------------------------// 
+// --------------------------------------------------------------------------------//
 
-// --------------------------------------------------------------------------------// 
+// --------------------------------------------------------------------------------//
 // SETUP --------------------------------------------------------------------------//
-// --------------------------------------------------------------------------------// 
+// --------------------------------------------------------------------------------//
 
 // Retrieve the scenes
 var scene1 = d3.select('#scene1')
@@ -65,7 +65,7 @@ scene1.append('text')
     .attr('y', 15)
     .attr('transform', 'rotate(-90)')
     .attr('text-anchor', 'middle')
-    .text('Total_Tornedo')
+    .text('Total_Tornado')
 
 scene2.append('text')
     .attr('x', 500)
@@ -92,7 +92,7 @@ var arc = d3.arc()
     .innerRadius(60);
 
 //var color = d3.scaleOrdinal(d3.schemeCategory10);
-var color = d3.scaleOrdinal(['#984ea3', '#8DC348', '#36570C', '#B55517', '#FF5733', '#FFAC33', '#0DE30D', '#FCFF33', 
+var color = d3.scaleOrdinal(['#984ea3', '#8DC348', '#36570C', '#B55517', '#FF5733', '#FFAC33', '#0DE30D', '#FCFF33',
                               '#C1C348',  '#4daf4a','#377eb8','#ff7f00','#E3610D','#e41a1c', '#0C6D0C', '#0C6D3E', '#589578',
                               '#588295',  '#7496EA','#DDD5E3','#E320D7','#B496A0','#B496B2', '#B420E3', '#B674EA', '#74C6EA',
                               '#EB1949',  '#782B3D','#D543CA','#AF9AEE','#9AB6EE','#3763BB', '#A7DFE9', '#A7E9D9', '#B6E9A7']);
@@ -119,9 +119,9 @@ var pie3 = d3.pie().value(function(d){
   return d.Total_Fatalities_2021;
 });
 
-// --------------------------------------------------------------------------------// 
+// --------------------------------------------------------------------------------//
 // SCENE ONE ----------------------------------------------------------------------//
-// --------------------------------------------------------------------------------// 
+// --------------------------------------------------------------------------------//
 
 var makes = ["Acura", "Alfa Romeo", "Aston Martin", "Audi", "Bentley", "BMW", "Buick", "Cadillac", "Chevrolet", "Chrysler",
     "Dodge", "Ferrari", "Fiat", "Ford", "Genesis", "GMC", "Honda", "Hyundai", "Infiniti", "Jaguar", "Jeep", "Kia", "Lamborghini",
@@ -149,25 +149,25 @@ var city_mpgs4 = ["25", "24", "12", "23", "13", "30", "20", "22", "21", "16", "1
     "30", "19", "120", "14", "22", "22", "23", " 17", "16", "26", "16", "85", "24", "121", "124", "21", "14", "12", "14", "32", "21", "92",
     "23", "21", "22"];
 
-var state = ["AL", "AR", "AZ", "CA", "CO", "CT", "DC", "DE", "FL", "GA", "IA", "ID", "IL", "IN", "KS", "KY", "LA", "MA", "MD", 
-    "ME", "MI", "MN", "MO", "MS", "MT", "NC", "ND", "NE", "NH", "NJ", "NM", "NV", "NY", "OH", "OK", "OR", "PA", "PR", 
+var state = ["AL", "AR", "AZ", "CA", "CO", "CT", "DC", "DE", "FL", "GA", "IA", "ID", "IL", "IN", "KS", "KY", "LA", "MA", "MD",
+    "ME", "MI", "MN", "MO", "MS", "MT", "NC", "ND", "NE", "NH", "NJ", "NM", "NV", "NY", "OH", "OK", "OR", "PA", "PR",
     "RI", "SC", "SD", "TN", "TX", "UT", "VA", "VI", "VT", "WA", "WI", "WV", "WY"];
 
-var total_count_2021 = ["65", "32", "6", "4", "48", "8", "1", "2", "33", "47", "119", "0", "73", "19", "37", "36", 
-    "48", "5", "8", "0", "18", "62", "46", "75", "1", "19", "15", "44", "0", "11", "16", 
-    "1", "12", "31", "63", "0", "43", "0", "1", "24", "21", "64", "94", "4", "11", "0", "1", "2", 
+var total_count_2021 = ["65", "32", "6", "4", "48", "8", "1", "2", "33", "47", "119", "0", "73", "19", "37", "36",
+    "48", "5", "8", "0", "18", "62", "46", "75", "1", "19", "15", "44", "0", "11", "16",
+    "1", "12", "31", "63", "0", "43", "0", "1", "24", "21", "64", "94", "4", "11", "0", "1", "2",
     "40", "2", "1"];
 
-var total_count_2020 = ["70", "42", "2", "8", "35", "7", "0", "4", "58", "60", "28", "0", "63", "15", "17", "22", 
-    "42", "2", "20", "1", "2", "59", "19", "82", "3", "46", "22", "22", "0", "4", "6", 
-    "0", "12", "20", "38", "2", "6", "0", "0", "61", "23", "34", "84", "0", "15", "0", "0", "2", 
+var total_count_2020 = ["70", "42", "2", "8", "35", "7", "0", "4", "58", "60", "28", "0", "63", "15", "17", "22",
+    "42", "2", "20", "1", "2", "59", "19", "82", "3", "46", "22", "22", "0", "4", "6",
+    "0", "12", "20", "38", "2", "6", "0", "0", "61", "23", "34", "84", "0", "15", "0", "0", "2",
     "18", "0", "4"];
 
-var total_count_2019 = ["80", "29", "12", "14", "49", "1", "0", "2", "25", "42", 
-    "56", "5", "48", "31", "87", "25", "82", "3", "6", "1", 
-    "8", "52", "63", "113", "4", "46", "15", "34", "0", "9", 
-    "19", "1", "4", "48", "148", "4", "35", "2", "1", "24", 
-    "25", "19", "167", "0", "23", "1", "1", "2", "29", "2", 
+var total_count_2019 = ["80", "29", "12", "14", "49", "1", "0", "2", "25", "42",
+    "56", "5", "48", "31", "87", "25", "82", "3", "6", "1",
+    "8", "52", "63", "113", "4", "46", "15", "34", "0", "9",
+    "19", "1", "4", "48", "148", "4", "35", "2", "1", "24",
+    "25", "19", "167", "0", "23", "1", "1", "2", "29", "2",
     "20"];
 
 var dataSet = [
@@ -370,22 +370,22 @@ function updatePieChaer(val) {
                 dx: 70
             }
         ]
-        
+
         scene4.selectAll('g').remove();
 
         const makeAnnotations = d3.annotation()
             .annotations(annotations)
         scene4.append("g")
             .call(makeAnnotations)
-            
+
 
         // remove the group that is not present anymore
         u.exit()
          .remove()
     } else if(val=="2020"){
-        
+
         var u = scene4.selectAll('path').remove();
-        
+
         u = scene4.selectAll('path')
             .data(pie2(dataSet))
             .enter()
@@ -430,7 +430,7 @@ function updatePieChaer(val) {
                 dx: 70
             }
         ]
-        
+
         scene4.selectAll('g').remove();
 
         const makeAnnotations = d3.annotation()
@@ -442,9 +442,9 @@ function updatePieChaer(val) {
         u.exit()
         .remove()
     } else {
-        
+
         var u = scene4.selectAll('path').remove();
-        
+
         u = scene4.selectAll('path')
             .data(pie3(dataSet))
             .enter()
@@ -493,9 +493,9 @@ function updatePieChaer(val) {
                     dx: 70
                 }
             ]
-            
+
             scene4.selectAll('g').remove();
-    
+
             const makeAnnotations = d3.annotation()
                 .annotations(annotations)
             scene4.append("g")
@@ -506,8 +506,8 @@ function updatePieChaer(val) {
             .remove()
     }
 
-    
-  
+
+
   }
 
 
@@ -709,7 +709,7 @@ scene7.selectAll("text")
 
 async function load1() {
     d3.csv("https://csarkar1983.github.io/testrepo/data/US_TORNADO_2021.csv").then(function (data_given) {
-        
+
 
         //console.log(data_given[3])
 
@@ -800,7 +800,7 @@ function handleSelectChange(event) {
                 dx: 0
             }
         ]
-        
+
         scene1.selectAll('g').remove();
 
         var makeScale = d3.scaleBand()
@@ -827,7 +827,7 @@ function handleSelectChange(event) {
 
     } else if (value === "2020") {
 
-        
+
 
         scene1.selectAll("rect")
             .transition()
@@ -849,18 +849,18 @@ function handleSelectChange(event) {
                     dx: 0
                 }
             ]
-            
+
             scene1.selectAll('g').remove();
-    
+
             var makeScale = d3.scaleBand()
                 .range([0, width])
                 .domain(state.map(function (d,i) { return state[i]; }))
-    
+
             var makeAxis = d3.axisBottom()
                 .scale(makeScale)
                 .ticks(5);
-    
-    
+
+
             scene1.append("g")
                 .attr("transform", "translate(50,750)")
                 .attr("class", "axis")
@@ -868,7 +868,7 @@ function handleSelectChange(event) {
                 .selectAll("text")
                 .attr("transform", "translate(-10,0)rotate(-30)")
                 .style("text-anchor", "end");
-    
+
             const makeAnnotations = d3.annotation()
                 .annotations(annotations)
             scene1.append("g")
@@ -895,7 +895,7 @@ function handleSelectChange(event) {
                 dx: 0
             }
         ]
-        
+
         scene1.selectAll('g').remove();
 
         var makeScale = d3.scaleBand()
@@ -922,9 +922,9 @@ function handleSelectChange(event) {
     }
 }
 
-// --------------------------------------------------------------------------------// 
+// --------------------------------------------------------------------------------//
 // SCENE TWO ----------------------------------------------------------------------//
-// --------------------------------------------------------------------------------// 
+// --------------------------------------------------------------------------------//
 
 var keys_cyls = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
 var myColor = d3.scaleOrdinal()
@@ -1043,7 +1043,7 @@ async function load2() {
                 dx: 70
             }
         ]
-        
+
 
         const makeAnnotations = d3.annotation()
             .annotations(annotations)
@@ -1146,9 +1146,9 @@ function updateClimateIndex(event) {
     }
 }
 
-// --------------------------------------------------------------------------------// 
+// --------------------------------------------------------------------------------//
 // SCENE THREE --------------------------------------------------------------------//
-// --------------------------------------------------------------------------------// 
+// --------------------------------------------------------------------------------//
 
 // Reference: https://www.d3-graph-gallery.com/graph/connectedscatter_select.html
 var keys_fuel = ["Diesel", "Gasoline", "Electricity"]

@@ -4,18 +4,18 @@
 <script src="https://rawgit.com/susielu/d3-annotation/master/d3-annotation.min.js"></script>
 
 <head>
-    <title>Tornedo Insurance</title>
+    <title>Tornado Insurance</title>
     <link rel="stylesheet" type="text/css" href="index.css">
 </head>
 
 <body onload="load1(); load2();">
     <div class="tornado1">
-        <h1 id="intro">Tornedo Insurance Underwriting Analysis<br>
+        <h1 id="intro">Tornado Insurance Underwriting Analysis<br>
             <span class="italic">By Arindam Chakraborty - UIUC CS 416 - Summer 2023</span>
         </h1>
-    
-        
-        
+
+
+
         <!--<img src="car.png" alt="car" width="240" height="120">-->
         <div class="banner">
             <table style="width:100%">
@@ -23,15 +23,15 @@
                     <td style="width:40%">
                         <h4>
                             Tornado insurance refers to the coverage necessary to insure against damage caused by tornadoes (See:
-                            <a href="https://www.businessinsider.com/personal-finance/what-is-tornado-insurance?IR=T" style="color: blue">Link</a>). As part of tornado insurance underwriting process we need to identify the 
-                            most tornado occured states and most affected states based on 2019 to 2021 data. Also using the narative visualization we will check where 
+                            <a href="https://www.businessinsider.com/personal-finance/what-is-tornado-insurance?IR=T" style="color: blue">Link</a>). As part of tornado insurance underwriting process we need to identify the
+                            most tornado occured states and most affected states based on 2019 to 2021 data. Also using the narative visualization we will check where
                             climate heat index is correlated with total number of tornado counts statewise or not.
                         </h4>
                     </td>
                     <td>
                         <ul style="list-style-type:circle;">
                             <li>
-                                <a href="#one" class="contents">Which states are on higher tornedo risk zone?</a>
+                                <a href="#one" class="contents">Which states are on higher tornado risk zone?</a>
                             </li>
                             <li>
                                 <a href="#two" class="contents">Which 5 states has most fatalities?</a>
@@ -40,23 +40,23 @@
                                 <a href="#three" class="contents">Identify top 6 states which has most injuries for last 3 years?</a>
                             </li>
                             <li>
-                                <a href="#four" class="contents">Do Climate Change Index of a state affect total tornedo count?</a>
+                                <a href="#four" class="contents">Do Climate Change Index of a state affect total tornado count?</a>
                             </li>
                         </ul>
                     </td>
                 </tr>
             </table>
-            
-        
-            
+
+
+
         </div>
         <br>
         <hr>
     </div>
     <a href="#two" class="back" style="color: blue;">Next</a>
     <a href="#intro" class="back" style="color: blue;">Previous</a>
-    <h2 id="one">Which states are on higher tornedo risk zone?</h2>
-    <p>Let's find out the states which are at higher tornado risk zone. From the dropdown menu explore each year. 
+    <h2 id="one">Which states are on higher tornado risk zone?</h2>
+    <p>Let's find out the states which are at higher tornado risk zone. From the dropdown menu explore each year.
         The red dotted line is a threshold by the insurance company for higher tornado risk zone.</p>
 
 
@@ -69,7 +69,7 @@
         </select>
     </div>
     <svg id="scene1" width=1050 height=800>
-        <text x="900" y="490">Higher Tornedo Zone</text>
+        <text x="900" y="490">Higher Tornado Zone</text>
 
         <line x1="0" y1="490" x2="900" y2="490" stroke="red" stroke-dasharray="4" />
     </svg>
@@ -84,7 +84,7 @@
     <a href="#three" class="back" style="color: blue;">Next</a>
     <a href="#one" class="back" style="color: blue;">Previous</a>
     <h2 id="two">Which 5 states has most fatalities?</h2>
-    <p>Let's find out the states with higest fatalities for the last 3 years. From the dropdown menu explore each year. 
+    <p>Let's find out the states with higest fatalities for the last 3 years. From the dropdown menu explore each year.
         Hover each part of the pie chart, you can get the state and the fatality number.
     </p>
 
@@ -105,28 +105,28 @@
     <a href="#four" class="back" style="color: blue;">Next</a>
     <a href="#two" class="back" style="color: blue;">Previous</a>
     <h2 id="three">Identify top 6 states which has most injuries for last 3 years?</h2>
-    <p>Let's find out the states with higest injuries for the last 3 years. Let's explore each year in the individual bubble chart. 
+    <p>Let's find out the states with higest injuries for the last 3 years. Let's explore each year in the individual bubble chart.
        Hover each bubble, you can get the state and the injury number.
     </p>
-    
+
     <svg id="scene5" width="500" height="300"></svg>
     <svg id="scene6" width="500" height="300"></svg>
     <svg id="scene7" width="500" height="300"></svg>
 
-    <p>Observations: From last 3 years of data we clearly identify that the 6 states with highest injuries are - 
+    <p>Observations: From last 3 years of data we clearly identify that the 6 states with highest injuries are -
         TN, AL, OH, KY, MS, SC.</p>
 
 
     <br><br><br><br>
     <hr>
-    
+
     <a href="#five" class="back" style="color: blue;">Next</a>
     <a href="#three" class="back" style="color: blue;">Previous</a>
     <a href="#intro" class="back" style="color: blue;">Back to Top</a>
 
-    <h2 id="four">Do Climate Change Index of a state affect total tornedo count?</h2>
+    <h2 id="four">Do Climate Change Index of a state affect total tornado count?</h2>
     <p>Hover over each Climate Change Index category in the legend to better understand the trend. Additionally, hovering over each
-        data point itself will indicate the state and the total tornado count would be visiable in the tooltip. 
+        data point itself will indicate the state and the total tornado count would be visiable in the tooltip.
         Also by changing the dropdown, we can explore 3 year's of data.
     </p>
 
@@ -145,8 +145,8 @@
     <p> Based on the last tree years of data, we can observe TX, OK, MS, KS, LA, AL, MO, IL, SC, GA,
         MN, FL, IA, TN, OK and MN are at high risk tornado zone. Among them TX, MS, AL, IL, OK and MN
         are at very high risk. AL, TN, KY, MS and GA has most of the fatalities related to tornadoes.
-        From last 3 years of data we clearly identify that the 6 states with highest injuries are - TN, 
-        AL, OH, KY, MS, SC. Among them TN has the most injuries. Also we identified that Climate Change 
+        From last 3 years of data we clearly identify that the 6 states with highest injuries are - TN,
+        AL, OH, KY, MS, SC. Among them TN has the most injuries. Also we identified that Climate Change
         Index are largely correlated with total tornado for a state. The State govornment should focous
         on the Climate Change Index.
     </p>
@@ -159,14 +159,14 @@
     <h2 id="five">About this Visualization</h2>
 
     <p>
-        
-        I have created this narrative visualization for the CS 416 Data Visualization course. This visualization has been 
-        constructed using slideshow narrative visualization technique, also tried to incorporate hybrid elements of the 
-        drill-down technique. This is top to buttom slidshow. Each slide define the guidance on how to interact with 
+
+        I have created this narrative visualization for the CS 416 Data Visualization course. This visualization has been
+        constructed using slideshow narrative visualization technique, also tried to incorporate hybrid elements of the
+        drill-down technique. This is top to buttom slidshow. Each slide define the guidance on how to interact with
         the visualization. User can use Next and Previous like to go back and forth. Also I have used links to go to
-        specific slide. The visual consistency has been maintaining uniform elements throughout, introducing a mixture 
+        specific slide. The visual consistency has been maintaining uniform elements throughout, introducing a mixture
         of text, image and chart elements, different colors.
-        
+
     </p>
 
     <table style="width:100%">
@@ -189,7 +189,7 @@
             <td>
                 <h3>Parameters</h3>
                 <p>
-                    The visualizations have a handful of relevant parameters that help the user better explore the data. Chart 1, 2 
+                    The visualizations have a handful of relevant parameters that help the user better explore the data. Chart 1, 2
                     and 4 has the dropdown to change the yesrs.
                 </p>
                 <h3>Triggers</h3>
@@ -201,7 +201,7 @@
             </td>
         </tr>
     </table>
-    
+
     <hr>
 
     <p>
