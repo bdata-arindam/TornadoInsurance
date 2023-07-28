@@ -56,8 +56,10 @@
     <a href="#two" class="back" style="color: blue;">Next</a>
     <a href="#intro" class="back" style="color: blue;">Previous</a>
     <h2 id="one">Which states are on higher tornado risk zone?</h2>
-    <p>Let's find out the states which are at higher tornado risk zone. From the dropdown menu explore each year.
-        The red dotted line is a threshold by the insurance company for higher tornado risk zone.</p>
+    <p>Let's find out the states which are at higher tornado risk zone from the dropdown menu explore each year.
+        The red dotted line is a threshold by the insurance company for higher tornado risk zone. The y-axis contains
+        the total tornado count and the x-axis contains the state. If you place the mouse on each bar, you can 
+        get the state name. Further we will do the analysis for top 5 states which has most fatalities.</p>
 
 
     <div>
@@ -85,7 +87,9 @@
     <a href="#one" class="back" style="color: blue;">Previous</a>
     <h2 id="two">Which 5 states has most fatalities?</h2>
     <p>Let's find out the states with higest fatalities for the last 3 years. From the dropdown menu explore each year.
-        Hover each part of the pie chart, you can get the state and the fatality number.
+        Hover each part of the pie chart, you can get the state and the fatality number. This is pie chart. If you 
+        place the mouse on slice of the pie chart, you can get the state name along with the fatality count. 
+        Further we will identify top 6 states which has most injuries for the three years.
     </p>
 
     <div>
@@ -105,8 +109,9 @@
     <a href="#four" class="back" style="color: blue;">Next</a>
     <a href="#two" class="back" style="color: blue;">Previous</a>
     <h2 id="three">Identify top 6 states which has most injuries for last 3 years?</h2>
-    <p>Let's find out the states with higest injuries for the last 3 years. Let's explore each year in the individual bubble chart.
-       Hover each bubble, you can get the state and the injury number.
+    <p>Let's find out the states with higest injuries for the last 3 years. Let's explore each year in the individual 
+        bubble chart. Hover each bubble, you can get the state and the injury number. In the next scene we will validate 
+        if climate change index of a state affetc total number of tornado count or not. 
     </p>
 
     <svg id="scene5" width="500" height="300"></svg>
@@ -139,7 +144,9 @@
         </select>
     </div>
 
-    <svg id="scene2" width=1050 height=350></svg>
+    <svg id="scene2" width=1050 height=350>
+        <text x="30" y="250" class="caption" stroke="#0000FF">Climate Change Index Category</text>
+    </svg>
 
     <h2 id="observation">Overall Observation</h2>
     <p> Based on the last tree years of data, we can observe TX, OK, MS, KS, LA, AL, MO, IL, SC, GA,

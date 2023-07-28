@@ -378,6 +378,23 @@ function updatePieChaer(val) {
         scene4.append("g")
             .call(makeAnnotations)
 
+        const annotations1 = [
+            {
+                note: { label: "Threshold is 10" , wrap: 300,
+                padding: -20},
+                color: ["red"],
+                x: 170,
+                y: -120,
+                dy: 0,
+                dx: 0,
+                subject: { radius: 50, radiusPadding: 10 },
+            },
+        ];
+            
+        const makeAnnotations1 = d3.annotation().annotations(annotations1);
+        scene4.append("g")
+            .call(makeAnnotations1)
+
 
         // remove the group that is not present anymore
         u.exit()
@@ -437,6 +454,23 @@ function updatePieChaer(val) {
             .annotations(annotations)
         scene4.append("g")
             .call(makeAnnotations)
+
+        const annotations1 = [
+            {
+                note: { label: "Threshold is 10" , wrap: 300,
+                padding: -20},
+                color: ["red"],
+                x: 170,
+                y: -120,
+                dy: 0,
+                dx: 0,
+                subject: { radius: 50, radiusPadding: 10 },
+            },
+        ];
+            
+        const makeAnnotations1 = d3.annotation().annotations(annotations1);
+        scene4.append("g")
+            .call(makeAnnotations1)
 
         // remove the group that is not present anymore
         u.exit()
@@ -500,6 +534,23 @@ function updatePieChaer(val) {
                 .annotations(annotations)
             scene4.append("g")
                 .call(makeAnnotations)
+
+            const annotations1 = [
+                {
+                    note: { label: "Threshold is 10" , wrap: 300,
+                    padding: -20},
+                    color: ["red"],
+                    x: 170,
+                    y: -120,
+                    dy: 0,
+                    dx: 0,
+                    subject: { radius: 50, radiusPadding: 10 },
+                },
+            ];
+
+            const makeAnnotations1 = d3.annotation().annotations(annotations1);
+            scene4.append("g")
+                .call(makeAnnotations1)
 
             // remove the group that is not present anymore
             u.exit()
@@ -576,6 +627,24 @@ scene5.selectAll("text")
     .style("font-size", "12px")
 
 
+const annotations1 = [
+    {
+        note: { label: "Threshold is 98" , wrap: 300,
+        padding: -20},
+        color: ["red"],
+        x: 10,
+        y: 20,
+        dy: 0,
+        dx: 0,
+        subject: { radius: 50, radiusPadding: 10 },
+    },
+];
+
+const makeAnnotations1 = d3.annotation().annotations(annotations1);
+scene5.append("g")
+    .call(makeAnnotations1)
+
+
 
 
 
@@ -636,6 +705,23 @@ scene6.selectAll("text")
     .text(function(d) {return d.State})
     .style("font-family", "arial")
     .style("font-size", "12px")
+
+const annotations2 = [
+    {
+        note: { label: "Threshold is 98" , wrap: 300,
+        padding: -20},
+        color: ["red"],
+        x: 10,
+        y: 20,
+        dy: 0,
+        dx: 0,
+        subject: { radius: 50, radiusPadding: 10 },
+    },
+];
+
+const makeAnnotations2 = d3.annotation().annotations(annotations2);
+scene6.append("g")
+    .call(makeAnnotations2)
 
 
 
@@ -703,7 +789,22 @@ scene7.selectAll("text")
     .style("font-family", "arial")
     .style("font-size", "12px")
 
+const annotations3 = [
+    {
+        note: { label: "Threshold is 98" , wrap: 300,
+        padding: -20},
+        color: ["red"],
+        x: 170,
+        y: 300,
+        dy: 0,
+        dx: 0,
+        subject: { radius: 50, radiusPadding: 10 },
+    },
+];
 
+const makeAnnotations3 = d3.annotation().annotations(annotations3);
+scene7.append("g")
+    .call(makeAnnotations3)
 
 
 
@@ -1145,81 +1246,3 @@ function updateClimateIndex(event) {
         })
     }
 }
-
-// --------------------------------------------------------------------------------//
-// SCENE THREE --------------------------------------------------------------------//
-// --------------------------------------------------------------------------------//
-
-// Reference: https://www.d3-graph-gallery.com/graph/connectedscatter_select.html
-var keys_fuel = ["Diesel", "Gasoline", "Electricity"]
-var shape = d3.scaleOrdinal()
-    .domain(keys_fuel)
-    .range([d3.symbol().type("circle"), d3.symbol().type("diamond"), d3.symbol().type("square")]);
-
-var scatter_tooltip = d3.select("body")
-    .append("div")
-    .append("div")
-    .style("opacity", 0)
-    .attr("class", "tooltip")
-    .style("background-color", "black")
-    .style("border-radius", "5px")
-    .style("padding", "15px")
-    .style("color", "white")
-
-/*async function load3() {
-    d3.csv("https://flunky.github.io/cars2017.csv").then(function (data) {
-
-        var fuelScale = d3.scaleBand()
-            .range([0, width])
-            .domain(data.map(function (d) { return d.Fuel; }))
-
-        var fuelAxis = d3.axisBottom()
-            .scale(fuelScale)
-            .ticks(5);
-
-        var cylScale = d3.scaleBand()
-            .range([height, 0])
-            .domain(keys_cyls)
-
-        var cylAxis = d3.axisLeft()
-            .scale(cylScale);
-
-        scene3.append("g")
-            .attr("transform", "translate(50,160)")
-            .attr("class", "axis")
-            .call(cylAxis);
-
-        scene3.append("g")
-            .attr("transform", "translate(50,1100)")
-            .attr("class", "axis")
-            .call(fuelAxis)
-            .selectAll("text")
-
-        scene3.append('g')
-            .selectAll("dot")
-            .data(data)
-            .enter()
-            .append("circle")
-            .attr("cx", function (d) { return 200 + fuelScale(d.Fuel); })
-            // .attr("cy", function (d) { return 1050 - cylScale(12-d.EngineCylinders); })
-            .attr("cy", function (d) { return 1000 - 60 * d.EngineCylinders; })
-
-            .attr("r", function (d) { return d.AverageHighwayMPG / 1.5; })
-            .style("fill", function (d) { return "#5E4FA2"; })
-            .style("opacity", "0.1")
-            .attr("stroke", "black")
-            .on("mouseover", function (d) {
-                scatter_tooltip.transition()
-                    .duration(200)
-                    .style("opacity", .9);
-                scatter_tooltip.html(d.Make)
-                    .style("left", (d3.event.pageX) + "px")
-                    .style("top", (d3.event.pageY - 28) + "px");
-            })
-            .on("mouseout", function (d) {
-                scatter_tooltip.transition()
-                    .duration(500)
-                    .style("opacity", 0);
-            });
-    })
-}*/
